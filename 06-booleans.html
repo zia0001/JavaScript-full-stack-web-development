@@ -17,6 +17,62 @@
       console.log("You can't drive");
     }
 
+    const obj = `{
+      "key": "value",
+      "int": "1",
+      "double": "0.0001",
+      "float": "50.50"
+    }`
+
+    //JSON, json.parse, json.stringify
+    const json = [{
+      key: 'value',
+      int: 1,
+      double: 0.0001,
+      float: 50.50
+    },
+    {
+      key: 'value',
+      int: 1,
+      double: 0.0001,
+      float: 50.50
+    }, {
+      key: 'value',
+      int: 1,
+      double: 0.0001,
+      float: 50.50
+    }];
+
+    const test = () => {
+      obj.zia = 'zia';
+      delete obj.int;
+      obj.double = 100;
+      const obj1 = typeof obj === 'string' ? JSON.parse(obj) : obj;
+      // const obj2 = JSON.parse(obj1);
+
+      console.log('Testing ---- obj: ', typeof obj, obj.zia, obj1);
+      for (let i = 0; i < json.length; i++) {
+        // console.log('For Loop: ', json[i]);
+      }
+      json.unshift({
+        key: 'new key',
+        int: 1,
+        double: 0.0001,
+        float: 50.50
+      });
+      json.pop();
+      for (let index in json) {
+        console.log('For Loop: ', json[index]);
+
+      }
+      json.map(ele => {
+        console.log('Json: ', ele.key)
+
+      })
+    }
+
+    test();
+
   </script>
 </body>
 
